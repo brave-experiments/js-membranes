@@ -99,11 +99,11 @@ window.registerMembraneProxy(["*"], {
 });
 ```
 
-The window.registerMembraneProxy takes the following arguments:
+The `window.registerMembraneProxy` takes the following arguments:
 * An array, containing any number of the following
-⋅⋅* “<first party>”: Indicating that other code on the first party should be treated as untrusted.
-⋅⋅* A domain match pattern, with the scheme portion optional: Indicating script units with URLs that match the match pattern (when the URL is normalized to an absolute URLs) should be treated as untrusted.
-⋅⋅* “*”: Indicating all script units should be treated as untrusted.
+  * `<first party>`: Indicating that other code on the first party should be treated as untrusted.
+  * A domain match pattern, with the scheme portion optional: Indicating script units with URLs that match the match pattern (when the URL is normalized to an absolute URLs) should be treated as untrusted.
+  * `*`: Indicating all script units should be treated as untrusted.
 * An object, matching the shape of a ES6 Proxy handler, with each function taking an additional optional scriptOrigin parameter.
 
 Trusted membranes register functions that are invoked whenever labeled code attempts to cross a label boundary.  Examples of such label boundary crossings include untrusted code accessing a built-in object, accessing properties or methods on DOM nodes, or accessing global objects outside of its membrane.
